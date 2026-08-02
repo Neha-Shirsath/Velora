@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
 @import "tailwindcss";
 
-@theme {
-  --font-imperial: "Imperial Script", cursive;
+@layer utilities {
+  .dancing-script {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Change to 500, 600, or 700 if you want */
+    font-style: normal;
+  }
 }
