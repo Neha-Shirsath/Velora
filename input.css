@@ -1,12 +1,146 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&display=swap');
 
 @import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  button,
+  summary {
+    min-height: 2.75rem;
+    cursor: pointer;
+  }
+
+  summary {
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+@layer components {
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.55) 50%,
+      rgba(69, 10, 10, 0.75) 100%
+    );
+  }
+
+  .section-heading {
+    font-family: "Cormorant Garamond", serif;
+  }
+
+  .container-page {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2.5rem);
+  }
+
+  .section-pad {
+    padding-block: clamp(3rem, 8vw, 7rem);
+  }
+
+  .card-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+  }
+
+  .gallery-scroll {
+    display: flex;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .gallery-scroll::-webkit-scrollbar,
+  .gallery-scroll::-webkit-scrollbar-button,
+  .gallery-scroll::-webkit-scrollbar-thumb,
+  .gallery-scroll::-webkit-scrollbar-track,
+  .gallery-scroll::-webkit-scrollbar-track-piece,
+  .gallery-scroll::-webkit-scrollbar-corner {
+    display: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  .gallery-image {
+    flex-shrink: 0;
+    width: clamp(10rem, 40vw, 16rem);
+    aspect-ratio: 1;
+    /* object-fit: cover; */
+  }
+
+  .nav-link {
+    color: rgb(255 255 255 / 0.9);
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 150ms;
+  }
+
+  @media (hover: hover) {
+    .nav-link:hover {
+      color: #fff;
+    }
+  }
+
+  .mobile-nav-panel {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: 0;
+    min-width: 12rem;
+    border-radius: 0.75rem;
+    background: rgb(69 10 10 / 0.95);
+    padding: 0.75rem;
+    backdrop-filter: blur(8px);
+  }
+
+  .mobile-nav-panel a {
+    display: block;
+    padding: 0.625rem 0.875rem;
+    color: #fff;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+  }
+
+  @media (hover: hover) {
+    .mobile-nav-panel a:hover {
+      background: rgb(255 255 255 / 0.1);
+    }
+  }
+}
 
 @layer utilities {
   .dancing-script {
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
-    font-weight: 400; /* Change to 500, 600, or 700 if you want */
+    font-weight: 400;
     font-style: normal;
+  }
+
+  .safe-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+
+  .safe-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
   }
 }
