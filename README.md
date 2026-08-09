@@ -5,21 +5,33 @@ The website was built using HTML5 and Tailwind CSS, with a responsive layout tha
 
 ## Features
 *Fully responsive design
+
 *Modern and elegant UI
+
 *Responsive navigation with mobile menu
+
 *Full-screen hero section
+
 *Experience section featuring:
     -Crafted Cocktails
     -Ambience
     -Music
     -Service
+    
 *Signature Cocktails section
+
 *Image gallery
+
 *About Velora section
+
 *Visit and location information
+
 *Contact and reservation information
+
 *Interactive hover effects and transitions
+
 *Responsive buttons and layouts
+
 *Font Awesome icons
 
 # Live Demo
